@@ -1,5 +1,5 @@
 # Landscape reconstruction And Parameter Inference from Single-snapshot data (LAPIS)
-<img width="11426" height="7460" alt="Image" src="https://github.com/user-attachments/assets/89ec1978-26d9-46c0-a238-3e12d32f73de" />
+<img width="11426" height="7460" alt="Image" src="https://github.com/user-attachments/assets/032e877b-781e-40c4-9297-8afa1ab6b32e" />
 LAPIS is a landscape reconstruction approach by integrating single-snapshot data with stochastic dynamical modeling.
 
 The specific steps for running LAPIS are as follows:
