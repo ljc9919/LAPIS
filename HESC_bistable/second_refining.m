@@ -251,17 +251,17 @@ for sample=1:10
                 for rr = 1:length(alpha)
                     for ww = 1:length(g)
                         if gold(ww)~=g(ww)
-                            dalphadg(rr,ww) = (alpha(rr)-alphaold(rr))./(g(ww)-gold(ww));
+                            dalphadg(rr,ww) = (alpha(rr)-alphaold(rr))./(g(ww)-gold(ww)+1e-2);
                         end
                         if Gold(ww)~=G(ww)
-                            dalphadG(rr,ww) = (alpha(rr)-alphaold(rr))./(G(ww)-Gold(ww));
+                            dalphadG(rr,ww) = (alpha(rr)-alphaold(rr))./(G(ww)-Gold(ww)+1e-2);
                         end
                         if Sold(ww)~=S(ww)
-                            dalphadS(rr,ww) = (alpha(rr)-alphaold(rr))./(S(ww)-Sold(ww));
+                            dalphadS(rr,ww) = (alpha(rr)-alphaold(rr))./(S(ww)-Sold(ww)+1e-2);
                         end                
                     end
                     if ddold~=dd
-                        dalphadd(rr) = (alpha(rr)-alphaold(rr))./(dd-ddold);
+                        dalphadd(rr) = (alpha(rr)-alphaold(rr))./(dd-ddold+1e-2);
                     end
                 end
                 dlossdg = KLlossdgnew(datamu1,datamu2,datasigma(:,:,1),datasigma(:,:,2),...
@@ -286,9 +286,9 @@ for sample=1:10
                     lambdad = 10^(-6); 
      
                 else
-                    lambda = 10^(-floor(log10(max(abs(dlossdg(:)))))-3.5); 
-                    lambdaG = 10^(-floor(log10(max(abs(dlossdG(:)))))-3.5); 
-                    lambdaS = 10^(-floor(log10(max(abs(dlossdS(:)))))-2.5); 
+                    lambda = 10^(-floor(log10(max(abs(dlossdg(:)))))-3); 
+                    lambdaG = 10^(-floor(log10(max(abs(dlossdG(:)))))-3); 
+                    lambdaS = 10^(-floor(log10(max(abs(dlossdS(:)))))-3); 
                     lambdad = 10^(-floor(log10(max(abs(dlossdd(:)))))-3);
                 end
     
@@ -310,4 +310,4 @@ for sample=1:10
     end
 end
 
-save sample1.mat
+save sample.mat
